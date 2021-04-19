@@ -1,9 +1,11 @@
 <template>
-  <div class="nav" id="nav">
+  <nav id="nav">
     <ul class="main-menu">
-      <li><router-link class="shine" to="/">Home</router-link></li>
+      <li>
+        <router-link class="shine" to="/">Home</router-link>
+      </li>
       <li @mouseenter="showSubMenu" @mouseleave="closeSubMenu">
-        <router-link class="shine" :to="{ name: 'Category' }"
+        <router-link class="shine" :to="{ name: 'Categories' }"
           >Categories</router-link
         >
       </li>
@@ -16,13 +18,14 @@
       <li v-for="navLink in subNavLinks" :key="navLink.id">
         <router-link
           class="shine"
-          :to="{ name: 'CategoryDetail', params: { id: navLink.id } }"
+          :to="{ name: 'Category', params: { id: navLink.id } }"
           >{{ navLink.title }}</router-link
         >
       </li>
     </ul>
-  </div>
+  </nav>
 </template>
+
 
 <script>
 export default {
@@ -49,7 +52,9 @@ export default {
 };
 </script>
 
+
 <style scoped>
+/* Main menu */
 #nav {
   position: fixed;
   top: 0;
@@ -61,49 +66,47 @@ export default {
 ul {
   display: flex;
   list-style: none;
-  /* justify-content: space-between; */
-  /* background-color: #060605; */
-  /* border-bottom: solid 2px #b1b1b1; */
 }
 
 li {
-  text-align: center;
   width: 35%;
-  background-color: #060605;
+  text-align: center;
+  background: #060605;
 }
 
+/* Sub menu */
 ul.sub-menu {
   width: 33.5%;
+  overflow: hidden;
+  color: currentColor;
   position: absolute;
+  z-index: -1;
   top: 90%;
   left: 50%;
+  transform: translate(-50%, -150%);
   flex-direction: column;
   align-items: center;
-  transform: translate(-50%, -150%);
   transition: 1s linear;
-  z-index: -1;
-  color: currentColor;
-  overflow: hidden;
+}
+
+ul.sub-menu:hover,
+ul.sub-menu.show {
+  transform: translate(-50%, 0);
 }
 
 ul.sub-menu li {
   width: 100%;
 }
 
-ul.sub-menu:hover,
-ul.sub-menu.show {
-  /* transform: translateY(0); */
-  transform: translate(-50%, 0);
-}
-
+/* Menu links */
 a {
-  color: currentColor;
   display: inline-block;
   padding: 1em;
   width: 100%;
   height: 100%;
   text-decoration: none;
   font-family: "Playfair Display", serif;
+  color: currentColor;
 }
 
 #nav a.router-link-exact-active {

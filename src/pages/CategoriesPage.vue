@@ -1,13 +1,14 @@
 <template>
   <main class="categories">
     <h1>Categories</h1>
+
     <div class="category-list">
       <router-link
         v-for="category in categories"
         :key="category.id"
-        :to="{ name: 'CategoryDetail', params: { id: category.id } }"
+        :to="{ name: 'Category', params: { id: category.id } }"
       >
-        <div class="category-card shine">
+        <div class="card-back shine shaded">
           <p class="card-title">{{ category.title }}</p>
         </div>
       </router-link>
@@ -15,9 +16,10 @@
   </main>
 </template>
 
+
 <script>
 export default {
-  name: "Category",
+  name: "Categories",
   data() {
     return {
       categories: [
@@ -32,6 +34,7 @@ export default {
 };
 </script>
 
+
 <style scoped>
 .category-list {
   margin: 1em auto;
@@ -43,62 +46,30 @@ export default {
 }
 
 a {
-  color: currentColor;
+  margin: 0.8em;
   text-decoration: none;
-  font-size: 1.2rem;
   font-family: "Playfair Display", serif;
+  font-size: 1.2rem;
+  color: currentColor;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0.8em;
-  /* width: 50%; */
 }
 
-.category-card {
-  background-color: #2b2b2b;
-  background-image: repeating-linear-gradient(
-      120deg,
-      #b1b1b170,
-      #b1b1b170 1px,
-      transparent 1px,
-      transparent 60px
-    ),
-    repeating-linear-gradient(
-      60deg,
-      #b1b1b170,
-      #b1b1b170 1px,
-      transparent 1px,
-      transparent 60px
-    ),
-    linear-gradient(
-      60deg,
-      #1e1e1e 25%,
-      transparent 25%,
-      transparent 75%,
-      black 75%,
-      #1e1e1e
-    ),
-    linear-gradient(
-      120deg,
-      black 25%,
-      transparent 25%,
-      transparent 75%,
-      black 75%,
-      black
-    );
-  background-size: 70px 120px;
+.card-back {
   width: calc(40vmin / 1.4);
   height: 40vmin;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 
 .card-title {
   text-align: center;
 }
 
+/* Media queries
+   ====================================================== */
 /* Phone */
 @media (min-width: 431px) {
   .card-title {

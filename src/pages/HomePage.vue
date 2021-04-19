@@ -1,46 +1,53 @@
 <template>
-  <main class="home">
+  <main>
     <SortMenu @sort="sortCardList" />
+
     <CardList
-      :query="query"
+      :query="randomCards"
       :reversible="true"
-      :sortParam="sortParam"
-      :sortDirection="sortDirection"
-      @cardSelected="getCardDetails"
-      @openCardModal="toggleModal"
+      :sortable="true"
+      :sortParams="sort"
+      @card-click="getCardDetails"
+      @open-card-modal="toggleModal"
     />
-    <DetailModal
+
+    <CardModal
       v-if="showModal"
-      @closeCardModal="toggleModal"
+      @close-card-modal="toggleModal"
       :itemId="selectedCard"
     />
-    <HelpModal v-if="showHelp" @closeHelpModal="closeHelp" />
+
+    <HelpModal v-if="showHelp" @close-help-modal="closeHelp" />
   </main>
 </template>
+
 
 <script>
 import SortMenu from "@/components/SortMenu.vue";
 import CardList from "@/components/CardList.vue";
-import DetailModal from "@/components/DetailModal.vue";
+import CardModal from "@/components/CardModal.vue";
 import HelpModal from "@/components/HelpModal.vue";
 
 export default {
   name: "Home",
-  data() {
-    return {
-      query: "https://rws-cards-api.herokuapp.com/api/v1/cards/random?n=10",
-      selectedCard: "",
-      showModal: false,
-      showHelp: true,
-      sortParam: null,
-      sortDirection: false,
-    };
-  },
   components: {
     SortMenu,
     CardList,
-    DetailModal,
+    CardModal,
     HelpModal,
+  },
+  data() {
+    return {
+      randomCards:
+        "https://rws-cards-api.herokuapp.com/api/v1/cards/random?n=10",
+      selectedCard: "",
+      showModal: false,
+      showHelp: true,
+      sort: {
+        sortParam: null,
+        sortDirection: false,
+      },
+    };
   },
   methods: {
     getCardDetails(id) {
@@ -50,8 +57,8 @@ export default {
       this.showModal = !this.showModal;
     },
     sortCardList(param, sortDirection) {
-      this.sortParam = param;
-      this.sortDirection = sortDirection;
+      this.sort.sortParam = param;
+      this.sort.sortDirection = sortDirection;
     },
     closeHelp() {
       this.showHelp = false;

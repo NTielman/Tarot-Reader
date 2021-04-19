@@ -1,6 +1,7 @@
 <template>
-  <button @click="handleClick" class="btn shine gold">{{ btnText }}</button>
+  <button @click="handleClick" class="shine shaded">{{ btnText }}</button>
 </template>
+
 
 <script>
 export default {
@@ -16,28 +17,31 @@ export default {
 };
 </script>
 
+
 <style scoped>
-.btn {
-  border: none;
-  color: currentColor;
-  padding: 1.5em;
+button {
   margin: 1em;
-  cursor: pointer;
+  border: none;
+  padding: 1.5em;
   font-family: "Playfair Display", serif;
-  background-color: #060605;
+  color: currentColor;
+  background: #060605;
+  cursor: pointer;
 }
 
-.btn:focus,
-.btn:active {
+button:focus,
+button:active {
   outline: none;
 }
 
+/* Media queries
+   ====================================================== */
 /* Desktops */
 @media (min-width: 1025px) {
-  .btn {
-    font-size: 1rem;
-    padding: 1.5em;
+  button {
     margin: 2.5em;
+    padding: 1.5em;
+    font-size: 1rem;
   }
 }
 </style>

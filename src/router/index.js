@@ -1,8 +1,8 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import Home from '@/views/Home.vue'
-import Random from '@/views/Random.vue'
-import Category from '@/views/Category.vue'
-import CategoryDetail from '@/views/CategoryDetail.vue'
+import Home from '@/pages/HomePage.vue'
+import Random from '@/pages/RandomPage.vue'
+import Categories from '@/pages/CategoriesPage.vue'
+import Category from '@/pages/CategoryPage.vue'
 
 const routes = [
   {
@@ -16,14 +16,14 @@ const routes = [
     component: Random
   },
   {
-    path: '/category',
-    name: 'Category',
-    component: Category
+    path: '/categories',
+    name: 'Categories',
+    component: Categories
   },
   {
-    path: '/category/:id',
-    name: 'CategoryDetail',
-    component: CategoryDetail,
+    path: '/categories/:id',
+    name: 'Category',
+    component: Category,
     props: true
   },
 ]

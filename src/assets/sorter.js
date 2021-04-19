@@ -1,24 +1,24 @@
 const sorter = (list, sortParam, sortDirection = false) => {
 
     //sorts from A-Z a-z 1-5
-    const sortDown = (songA, songB) => {
+    const sortDown = (itemA, itemB) => {
 
-        if (songA < songB) {
+        if (itemA < itemB) {
             return -1;
         }
-        if (songA > songB) {
+        if (itemA > itemB) {
             return 1;
         }
         return 0;
     };
 
     //sorts from Z-A z-a 5-1
-    const sortUp = (songA, songB) => {
+    const sortUp = (itemA, itemB) => {
 
-        if (songA < songB) {
+        if (itemA < itemB) {
             return 1;
         }
-        if (songA > songB) {
+        if (itemA > itemB) {
             return -1;
         }
         return 0;
