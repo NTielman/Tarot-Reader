@@ -2,7 +2,7 @@
 ---
 
 ## Description 
-Find out what the future holds for your love life, health and career with this Tarot reader.
+Find out what the future holds for your love life, health and career with this Tarot reader. Learn the meanings behind all 78 tarot cards.
 
 
 ## Languages, Libraries & Frameworks
@@ -15,27 +15,22 @@ Find out what the future holds for your love life, health and career with this T
 ## Setup 
 1. Clone the repository to a local directory
 2. cd into the directory and run `npm run serve` to run the app in development mode
-3. run `npm run build` or `yarn build` to build the app for production
 
 
 ## Screenshots
-![alt text](https://github.com/NTielman/Portfolio/blob/main/public/assets/images/projects/devProjects/portfolio.png "Portfolio Preview image")
+![alt text](https://github.com/NTielman/Tarot-Reader/blob/main/src/assets/images/tarotReader.jpg "Tarot reader Preview image")
 
-![Alt Text](https://media.giphy.com/media/C1GmLruAzdoE3LcF07/giphy.gif)
-
-
-## Live Demo 
-https://ntielman.github.io/Portfolio/
+![Alt Text](https://media.giphy.com/media/1bNPrvSM40fsIIi12N/giphy.gif)
 
 
 ## Usage & Details 
-A website to showcase past and current projects. 
+A web app to get your daily tarot readings from. 
 
-* To navigate to a specific section in the site, tap on the burgermenu at the top of the screen and then tap on the desired section.
-* To toggle between "designer" and "developer" mode, tap on the togglebar at the bottom of the screen
-* To include or exclude specific types of projects tap on the desired words from the filtermenu above the projects 
-* To view more info on a specific project hover over the project and click on any desired links
-* To connect or contact me on w specific social site, tap on the desired social icon in the contact section
+* Tap a card and view it's orientation.
+* Double tap to read it's meaning and how it relates to your life
+* To draw a random card, visit the Random Page and view which card fate has dealt you. 
+* To read and learn the meanings behind all 22 major arcanas and 4 suits, tap on a desired category from the categories menu. 
 
 ## Credits
-For the second homepage (Design homepage) i make use of [Matthew Wagerfield's](https://github.com/wagerfield) parallax.js library.
+* This web app makes use of [E Kelen's](https://github.com/ekelen) tarot-api for the tarot meanings and descriptions. repository can be found at: https://github.com/ekelen/tarot-api
+* This web app makes use of [Bennion Kearny's](https://www.bennionkearny.com/) free printable tarot deck (with some added filters) for the card images. images can be found at: https://www.bennionkearny.com/wp-content/uploads/2019/11/Tarot-Card-Deck.pdf
