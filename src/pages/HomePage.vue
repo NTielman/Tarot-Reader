@@ -1,12 +1,8 @@
 <template>
   <main>
-    <SortMenu @sort="sortCardList" />
-
     <CardList
       :query="randomCards"
       :reversible="true"
-      :sortable="true"
-      :sortParams="sort"
       @card-click="getCardDetails"
       @open-card-modal="toggleModal"
     />
@@ -23,7 +19,6 @@
 
 
 <script>
-import SortMenu from "@/components/SortMenu.vue";
 import CardList from "@/components/CardList.vue";
 import CardModal from "@/components/CardModal.vue";
 import HelpModal from "@/components/HelpModal.vue";
@@ -31,7 +26,6 @@ import HelpModal from "@/components/HelpModal.vue";
 export default {
   name: "Home",
   components: {
-    SortMenu,
     CardList,
     CardModal,
     HelpModal,
@@ -43,10 +37,6 @@ export default {
       selectedCard: "",
       showModal: false,
       showHelp: true,
-      sort: {
-        sortParam: null,
-        sortDirection: false,
-      },
     };
   },
   methods: {
@@ -55,10 +45,6 @@ export default {
     },
     toggleModal() {
       this.showModal = !this.showModal;
-    },
-    sortCardList(param, sortDirection) {
-      this.sort.sortParam = param;
-      this.sort.sortDirection = sortDirection;
     },
     closeHelp() {
       this.showHelp = false;
