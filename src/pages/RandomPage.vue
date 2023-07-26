@@ -30,7 +30,7 @@ export default {
   methods: {
     getRandomCard() {
       window.location.href = "#random";
-      fetch("https://rws-cards-api.herokuapp.com/api/v1/cards/random?n=1")
+      fetch("https://tarot-api-3hv5.onrender.com/api/v1/cards/random?n=1")
         .then((response) => response.json())
         .then((data) => (this.card = data.cards[0]))
         .catch((err) => console.log(err.message));

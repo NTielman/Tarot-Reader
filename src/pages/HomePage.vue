@@ -33,7 +33,7 @@ export default {
   data() {
     return {
       randomCards:
-        "https://rws-cards-api.herokuapp.com/api/v1/cards/random?n=10",
+        "https://tarot-api-3hv5.onrender.com/api/v1/cards/random?n=10",
       selectedCard: "",
       showModal: false,
       showHelp: true,

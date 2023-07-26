@@ -42,10 +42,10 @@ export default {
   computed: {
     relatedCards() {
       if (this.card && this.card.type == "major") {
-        return "https://rws-cards-api.herokuapp.com/api/v1/cards/search?type=major";
+        return "https://tarot-api-3hv5.onrender.com/api/v1/cards/search?type=major";
       } else if (this.card && this.card.type == "minor") {
         return (
-          "https://rws-cards-api.herokuapp.com/api/v1/cards/suits/" +
+          "https://tarot-api-3hv5.onrender.com/api/v1/cards/suits/" +
           this.card.suit
         );
       }
@@ -56,7 +56,7 @@ export default {
   },
   methods: {
     getCardInfo(id) {
-      fetch("https://rws-cards-api.herokuapp.com/api/v1/cards/" + id)
+      fetch("https://tarot-api-3hv5.onrender.com/api/v1/cards/" + id)
         .then((response) => response.json())
         .then((data) => (this.card = data.card))
         .catch((err) => console.log(err.message));

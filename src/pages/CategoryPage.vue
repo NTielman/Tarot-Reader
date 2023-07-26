@@ -61,7 +61,7 @@ export default {
     },
     cardSuit() {
       return (
-        "https://rws-cards-api.herokuapp.com/api/v1/cards/search?" + this.id
+        "https://tarot-api-3hv5.onrender.com/api/v1/cards/search?" + this.id
       );
     },
   },
